@@ -9,7 +9,7 @@
 
 ### SPECIAL NOTE: the original code author discusses how to add the Fresh package to avoid manual restarts.
 ### That information can be found at [this link](https://freshman.tech/web-development-with-go#auto-restart-the-server)
-### USAGE: in VS Code open a git bash terminal, type "fresh" (no quotes) and hit Enter.  Simple! ##😸
+### USAGE: in VS Code open a git bash terminal, type "fresh" (no quotes) and hit Enter.  Simple! 😸
 
 
 ![demo](https://ik.imagekit.io/freshman/news-demo_MrYio9GKlzSi.png)
