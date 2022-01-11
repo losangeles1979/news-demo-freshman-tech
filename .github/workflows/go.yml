@@ -25,9 +25,3 @@ jobs:
 
     - name: Test
       run: go test -v ./...
-
-    - name: Upload Artifact Directory
-    - uses: actions/upload-artifact@v2
-      with:
-        name: my-artifact
-        path: ./*.exe
