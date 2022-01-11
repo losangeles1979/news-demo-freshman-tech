@@ -29,5 +29,5 @@ jobs:
     - name: Upload Artifact Directory
     - uses: actions/upload-artifact@v2
       with:
-        name: myArtifact
+        name: my-artifact
         path: ./ # zip up the directory and upload as an artifact
