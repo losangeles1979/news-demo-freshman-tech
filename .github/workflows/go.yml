@@ -25,5 +25,9 @@ jobs:
 
     - name: Test
       run: go test -v ./...
-      
-      
+
+    - name: Upload Artifact Directory
+    - uses: actions/upload-artifact@v2
+      with:
+        name: myArtifact
+        path: ./ # zip up the directory and upload as an artifact
