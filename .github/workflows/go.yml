@@ -19,6 +19,8 @@ jobs:
         go-version: 1.17
 
     - name: Build
+      env: 
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
       run: go build -v ./...
 
     - name: Test
