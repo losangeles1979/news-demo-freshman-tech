@@ -13,6 +13,7 @@ import (
 
 	// I am using Freshman-tech's news-demo repo b/c his news-demo-starter-files
 	// has no /news subdir and so my Docker build fails, asking for the /news subdir.
+	// "github.com/freshman-tech/news-demo/news"
 	"github.com/freshman-tech/news-demo/news"
 	"github.com/joho/godotenv"
 )
