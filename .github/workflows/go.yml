@@ -26,6 +26,12 @@ jobs:
     - name: Test
       run: go test -v ./...
 
+    - name: working directory
+      run: echo $(pwd)
+      
+    - name: list files
+      run: echo $(ls)
+      
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
