@@ -21,7 +21,8 @@ jobs:
     - name: Build
       env: 
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
-      run: go build -v ./...
+      run: go build -o main.exe main.go
+      # run: go build -v ./...
 
     - name: Test
       run: go test -v ./...
