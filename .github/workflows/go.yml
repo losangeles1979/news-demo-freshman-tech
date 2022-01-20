@@ -26,6 +26,9 @@ jobs:
     - name: Test
       run: go test -v ./...
 
+    - name: goroot
+      run: echo $GOROOT
+      
     - name: working directory
       run: echo $(pwd)
       
