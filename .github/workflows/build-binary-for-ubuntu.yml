@@ -1,4 +1,4 @@
-name: Build Binary for Alpine Linux
+name: Build Binary for Ubuntu
 
 on:
   push:
