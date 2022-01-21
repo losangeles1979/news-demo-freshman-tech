@@ -20,3 +20,7 @@
 # Go workspace file
 go.work
 tmp/runner-build.exe
+
+# my .env file contains the apinews key
+# so don't include that in the github database
+.env

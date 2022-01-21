@@ -12,6 +12,7 @@ RUN go mod tidy
 
 RUN apk add git
 
+#RUN go get github.com/Freshman-tech/news-demo
 RUN go get github.com/joho/godotenv
 
 COPY *.go ./
@@ -22,7 +23,5 @@ RUN go get -d -v ./...
 # Avoid: RUN go build -o docker-news-app
 # Install the package
 RUN go install -v ./...
-
 EXPOSE 3000
-
 CMD [ "/main.exe" ]

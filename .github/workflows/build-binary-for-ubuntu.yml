@@ -1,0 +1,49 @@
+name: Build Binary for Ubuntu
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  setup-build-test-upload:
+    name: Setup + Build + Test + Upload Artifact
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+
+    - name: build
+      env: 
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+      # this does NOT copy the binary to $GOPATH/bin/news-demo.exe  -->  run: go install 
+      run: go build -o main.exe main.go
+      # run: go build -v ./...
+
+    - name: Test
+      run: go test -v ./...
+      
+    - name: goroot
+      run: echo $GOROOT
+
+    - name: gopath
+      run: echo $GOPATH
+
+    - name: working directory
+      run: echo $(pwd)
+      
+    - name: list files
+      run: echo $(ls)
+
+    - name: upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: compiled-binary
+        path: main.exe
+        # this fails!!  path: $GOPATH/bin/news-demo.exe
