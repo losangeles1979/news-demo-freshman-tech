@@ -1,4 +1,4 @@
-## i changed this line of code and pushed to github to kick off a build.
+## i changed this line of code to kick off a build.
 # This repo uses the code found at: 
 ## https://github.com/Freshman-tech/news-demo
 
