@@ -18,14 +18,10 @@ jobs:
       with:
         go-version: 1.17
 
-  build:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-    - name: Build
+    - name: build
       env: 
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
-      # this does NOT copy the binary to $GOPATH/bin/news-demo.exe   run: go install 
+      # this does NOT copy the binary to $GOPATH/bin/news-demo.exe  -->  run: go install 
       run: go build -o main.exe main.go
       # run: go build -v ./...
 
@@ -44,10 +40,6 @@ jobs:
     - name: list files
       run: echo $(ls)
 
-  upload:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
