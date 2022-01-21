@@ -9,6 +9,7 @@ on:
 jobs:
 
   setup-build-test-upload:
+    name: Setup + Build + Test + Upload Artifact
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
