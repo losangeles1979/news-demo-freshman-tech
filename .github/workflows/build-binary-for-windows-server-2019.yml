@@ -17,13 +17,13 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: 1.17
+        go-version: 1.15
 
     - name: build
       env: 
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
       # this does NOT copy the binary to $GOPATH/bin/news-demo.exe  -->  run: go install 
-      run: go build -o main.exe main.go
+      run: go build -o main.exe
       # run: go build -v ./...
 
     - name: Test
