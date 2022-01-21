@@ -22,20 +22,16 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
-    - name: Compile
+    - name: Build
       env: 
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
       # this does NOT copy the binary to $GOPATH/bin/news-demo.exe   run: go install 
       run: go build -o main.exe main.go
       # run: go build -v ./...
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
     - name: Test
       run: go test -v ./...
-
+      
     - name: goroot
       run: echo $GOROOT
 
@@ -52,7 +48,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Upload Artifact
+    - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: compiled-binary
