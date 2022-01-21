@@ -8,7 +8,7 @@ on:
 
 jobs:
 
-  setup:
+  setup-build-test-upload:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
