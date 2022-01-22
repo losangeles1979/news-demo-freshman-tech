@@ -39,7 +39,7 @@ jobs:
       run: echo $(ls)
 
     - name: search for *.exe in working directory
-      run: echo $(ls -l --recursive *.exe)
+      run: echo $(ls -l *.exe --recursive)
       
 #    - name: show gopath
 #      run: echo $GOPATH
@@ -48,7 +48,7 @@ jobs:
 #      run: ls -l $GOPATH
 
 #    - name: search for *.exe in gopath 
-#      run: echo $(ls -l --recursive *.exe)
+#      run: echo $(ls -l *.exe --recursive)
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
