@@ -1,4 +1,6 @@
-## i changed this line of code + pushed to github to kick off a build.
+## i changed this line of code + pushed to GitHub
+## to see if the CI with my notredame.visualstudio.com
+## SHUTTLEDUDE project pipeline would kick off!!
 # This repo uses the code found at: 
 ## https://github.com/Freshman-tech/news-demo
 
