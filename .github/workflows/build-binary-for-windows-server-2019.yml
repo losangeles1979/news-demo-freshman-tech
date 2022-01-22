@@ -36,11 +36,11 @@ jobs:
     - name: list working directory files
       run: echo $(ls)
 
-    - name: show gopath
-      run: echo $GOPATH
+#    - name: show gopath
+#      run: echo $GOPATH
       
-    - name: list gopath files
-      run: ls -l $GOPATH
+#    - name: list gopath files
+#      run: ls -l $GOPATH
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
