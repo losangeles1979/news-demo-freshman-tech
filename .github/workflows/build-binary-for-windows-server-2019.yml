@@ -38,17 +38,21 @@ jobs:
     - name: list working directory files
       run: echo $(ls)
 
-    - name: search for *.exe in working directory
-      run: echo $(ls -l *.exe --recursive)
+    - name: search for exe files
+      uses: tj-actions/glob@v3.3
+      id: glob
+      with:
+        files: |
+          *.exe
+    - name: Show all matching files
+      run: |
+        echo "${{ steps.glob.outputs.paths }}"
       
 #    - name: show gopath
 #      run: echo $GOPATH
       
 #    - name: list gopath files
 #      run: ls -l $GOPATH
-
-#    - name: search for *.exe in gopath 
-#      run: echo $(ls -l *.exe --recursive)
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
