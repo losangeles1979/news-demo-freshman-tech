@@ -42,7 +42,7 @@ jobs:
       run: echo $(ls)
       
     - name: list gopath bin
-      run: ll $GOPATH\\bin
+      run: ls -l $GOPATH\\bin
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
