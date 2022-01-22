@@ -36,6 +36,9 @@ jobs:
     - name: Test
       run: go test -v ./...
 
+    - name: list working directory files
+      run: echo $(ls)
+
     - name: initiate tj-actions/glob@v3.3
       uses: tj-actions/glob@v3.3
       id: glob
