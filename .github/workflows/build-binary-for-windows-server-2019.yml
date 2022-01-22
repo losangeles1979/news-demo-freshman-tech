@@ -22,9 +22,12 @@ jobs:
     - name: build
       env: 
           NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+      
       # this does NOT copy the binary to $GOPATH/bin/news-demo.exe
-      # run: go install 
-      run: go build -o main.exe
+      # run: go install
+      
+      # use the -o option to specify the name of the output exe
+      run: go build -o news-demo.exe
       
       # not sure exactly what this does?!
       # run: go build -v ./...
@@ -32,13 +35,7 @@ jobs:
     - name: Test
       run: go test -v ./...
 
-    - name: show working directory
-      run: echo $(pwd)
-      
-    - name: list working directory files
-      run: echo $(ls)
-
-    - name: search for exe files
+    - name: glob search for exe files
       uses: tj-actions/glob@v3.3
       id: glob
       with:
@@ -47,16 +44,10 @@ jobs:
     - name: Show all matching files
       run: |
         echo "${{ steps.glob.outputs.paths }}"
-      
-#    - name: show gopath
-#      run: echo $GOPATH
-      
-#    - name: list gopath files
-#      run: ls -l $GOPATH
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: compiled-binary
-        path: main.exe
+        path: news-demo.exe
         # this fails!!  path: $GOPATH/bin/news-demo.exe
