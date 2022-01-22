@@ -41,9 +41,9 @@ jobs:
       with:
         files: |
           *.exe
-    - name: Show all matching files
-      run: |
-        echo "${{ steps.glob.outputs.paths }}"
+#    - name: Show all matching files
+#      run: |
+#        echo "${{ steps.glob.outputs.paths }}"
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
