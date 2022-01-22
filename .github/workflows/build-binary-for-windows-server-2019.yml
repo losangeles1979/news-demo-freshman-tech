@@ -49,6 +49,6 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: compiled-binary
+        name: Windows-Server-2019-binary
         path: news-demo.exe
         # this fails!!  path: $GOPATH/bin/news-demo.exe
