@@ -32,14 +32,17 @@ jobs:
     - name: goroot
       run: echo $GOROOT
 
-    - name: gopath
-      run: echo $GOPATH
+    - name: show gopath bin
+      run: echo $GOPATH\\bin
 
     - name: working directory
       run: echo $(pwd)
       
-    - name: list files
+    - name: list pwd files
       run: echo $(ls)
+      
+    - name: list gopath bin
+      run: ll $GOPATH\\bin
 
     - name: upload artifact
       uses: actions/upload-artifact@v2
