@@ -1,27 +1,31 @@
 # syntax=docker/dockerfile:1
 
+# I based this Dockerfile on information from this website:
+# https://docker.github.io/get-involved/docs/communityleaders/eventhandbooks/go/gomodules 
+# January 26, 2022
+
 FROM golang:1.15-alpine
+
+RUN mkdir /app
+
+ADD . /app
 
 WORKDIR /app
 
-COPY go.sum ./
+# I think git is part of the base image above
+# RUN apk add git
 
-COPY go.mod ./
+## Add this go mod download command to pull in any dependencies
 RUN go mod download
-RUN go mod tidy
+#RUN go mod download
+#RUN go mod tidy
 
-RUN apk add git
+## Our project will now successfully build with the necessary go libraries included.
+RUN go build -o news-demo.exe .
 
-#RUN go get github.com/Freshman-tech/news-demo
-RUN go get github.com/joho/godotenv
-
-COPY *.go ./
-
-# Download all the dependencies
-RUN go get -d -v ./...
-
-# Avoid: RUN go build -o docker-news-app
-# Install the package
-RUN go install -v ./...
+# The app is running on port 3000
 EXPOSE 3000
-CMD [ "/main.exe" ]
+
+## Our start command which kicks off
+## our newly created binary executable
+CMD ["/app/news-demo.exe"]
