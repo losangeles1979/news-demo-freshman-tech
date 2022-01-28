@@ -44,6 +44,5 @@ jobs:
     - name: upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: compiled-binary
-        path: main.exe
-        # this fails!!  path: $GOPATH/bin/news-demo.exe
+        name: ubuntu-latest-allBuildFiles
+        path: ./  # entire contents of current directory

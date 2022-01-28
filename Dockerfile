@@ -29,3 +29,21 @@ EXPOSE 3000
 ## Our start command which kicks off
 ## our newly created binary executable
 CMD ["/app/news-demo.exe"]
+####################
+# SOME DOCUMENTATION
+#
+# HOORAY!
+# This command below successfully builds an image
+# named la1979/news-demo
+# docker build -t la1979/news-demo .
+#
+# HOORAY - this command starts and runs the news-demo container
+# BUT ... you still need to use localhost:3000
+# docker run -dp 3000:3000 --name news-demo la1979/news-demo
+#
+# Do NOT say docker run -dp 3000:80 --name la1979/news-demo
+# the --name causes an error message saying you need at least 1 argument!
+#
+# Next try:
+# docker run -dp 3000:80 --name news-demo la1979/news-demo
+# NOOOO.  Fails miserably.
