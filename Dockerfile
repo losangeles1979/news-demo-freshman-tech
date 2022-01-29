@@ -17,7 +17,6 @@ WORKDIR /app
 
 ## Add this go mod download command to pull in any dependencies
 RUN go mod download
-#RUN go mod download
 #RUN go mod tidy
 
 ## Our project will now successfully build with the necessary go libraries included.
@@ -28,6 +27,8 @@ EXPOSE 3000
 
 ## Our start command which kicks off
 ## our newly created binary executable
+## Use what is known as EXEC form instead of SHELL form
+## i.e. do not say RUN xyz...
 CMD ["/app/news-demo.exe"]
 ####################
 # SOME DOCUMENTATION
@@ -47,3 +48,4 @@ CMD ["/app/news-demo.exe"]
 # Next try:
 # docker run -dp 3000:80 --name news-demo la1979/news-demo
 # NOOOO.  Fails miserably.
+# That is b/c the meaning is LOCAL:CONTAINER
